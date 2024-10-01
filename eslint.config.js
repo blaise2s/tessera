@@ -6,7 +6,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  { ignores: ["build", "coverage", "dist", ".yarn", ".husky", ".pnp.*"] },
   {
     extends: [
       js.configs.recommended,

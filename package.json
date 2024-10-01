@@ -7,7 +7,7 @@
     "build": "tsc -b && vite build",
     "dev": "vite --port 3000",
     "lint": "eslint .",
-    "preview": "yarn build && vite preview",
+    "preview": "vite preview",
     "prepare": "husky"
   },
   "dependencies": {

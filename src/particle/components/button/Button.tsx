@@ -2,40 +2,46 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 import { Size, Sizes } from '../properties';
 import { clsx } from 'clsx';
 
-const Variants = {
+const ButtonVariants = {
   primary: 'primary',
   outline: 'outline',
   ghost: 'ghost',
   danger: 'danger',
 } as const;
-type Variant = (typeof Variants)[keyof typeof Variants];
+export type ButtonVariant =
+  (typeof ButtonVariants)[keyof typeof ButtonVariants];
 
 const commonNonDangerButtonClasses =
   'focus:outline focus:outline-orange-300 focus:outline-offset-2';
-const getButtonVariantClasses = (variant: Variant) => {
+const getButtonVariantClasses = (variant: ButtonVariant, active?: boolean) => {
   let className = '';
   switch (variant) {
-    case Variants.primary:
+    case ButtonVariants.primary:
       className = clsx(
         'bg-orange-500 text-white hover:bg-orange-600 active:bg-orange-700',
+        active && 'bg-orange-700',
         commonNonDangerButtonClasses,
       );
       break;
-    case Variants.outline:
+    case ButtonVariants.outline:
       className = clsx(
         'bg-white border border-gray-400 text-gray-900 hover:bg-gray-50 hover:border-gray-700 active:bg-gray-100 active:border-gray-800',
+        active && 'bg-gray-100 border-gray-800 z-10',
         commonNonDangerButtonClasses,
       );
       break;
-    case Variants.ghost:
+    case ButtonVariants.ghost:
       className = clsx(
         'bg-transparent text-gray-900 hover:bg-gray-100 active:bg-gray-200 focus:bg-gray-100',
+        active && 'bg-gray-200',
         commonNonDangerButtonClasses,
       );
       break;
-    case Variants.danger:
-      className =
-        'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:outline focus:outline-red-300 focus:outline-offset-2';
+    case ButtonVariants.danger:
+      className = clsx(
+        'bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:outline focus:outline-red-300 focus:outline-offset-2',
+        active && 'bg-red-700',
+      );
       break;
   }
   return className;
@@ -58,17 +64,18 @@ const getButtonSizeClasses = (size: Size) => {
 };
 
 const commonButtonClasses =
-  'font-medium rounded disabled:bg-gray-200 disabled:text-gray-600 disabled:border-none disabled:cursor-not-allowed';
+  'font-medium rounded relative hover:z-20 focus:z-10 disabled:bg-gray-200 disabled:text-gray-600 disabled:border-gray-200 disabled:z-0 disabled:cursor-not-allowed';
 
-interface ButtonProps
+export interface ButtonProps
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
   size?: Size;
-  variant?: Variant;
+  variant?: ButtonVariant;
   icon?: ReactNode;
   iconPosition?: 'left' | 'right';
+  active?: boolean;
 }
 
 export const Button = ({
@@ -77,10 +84,11 @@ export const Button = ({
   className: clazzName = '',
   icon,
   iconPosition = 'left',
+  active,
   children,
   ...props
 }: ButtonProps) => {
-  const buttonVariantClasses = getButtonVariantClasses(variant);
+  const buttonVariantClasses = getButtonVariantClasses(variant, active);
   const buttonSizeClasses = getButtonSizeClasses(size);
   const className = clsx(
     buttonVariantClasses,
@@ -93,7 +101,10 @@ export const Button = ({
   return (
     <button {...{ className, ...props }}>
       <span
-        className={clsx('flex items-center', iconOnRight && 'flex-row-reverse')}
+        className={clsx(
+          'flex items-center justify-center',
+          iconOnRight && 'flex-row-reverse',
+        )}
       >
         {icon && (
           <span

@@ -11,5 +11,5 @@
     ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
     ["common[A-Za-z]*Classes\\s*=\\s*(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "cSpell.words": ["clsx"]
+  "cSpell.words": ["clsx", "stylelint", "tailwindcss"]
 }

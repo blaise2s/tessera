@@ -33,15 +33,16 @@ export const ButtonGroup = ({
   // and add size to children if they haven't been given one explicitly.
   // It would be a little silly to mix and match these, but it's possible, and this
   // should be left up to the consumer to decide.
-  const children = _children.map((child) => {
+  const children = _children.map((child, _key) => {
+    const key = child.props.key || _key;
     if (!child.props.variant && !child.props.size) {
-      return cloneElement(child, { variant, size });
+      return cloneElement(child, { variant, size, key });
     } else if (!child.props.variant) {
-      return cloneElement(child, { variant });
+      return cloneElement(child, { variant, key });
     } else if (!child.props.size) {
-      return cloneElement(child, { size });
+      return cloneElement(child, { size, key });
     }
-    return child;
+    return cloneElement(child, { key });
   });
 
   const classes =

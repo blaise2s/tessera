@@ -3311,37 +3311,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"roi-ui@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "roi-ui@workspace:."
-  dependencies:
-    "@eslint/js": "npm:^9.11.1"
-    "@types/react": "npm:^18.3.10"
-    "@types/react-dom": "npm:^18.3.0"
-    "@vitejs/plugin-react-swc": "npm:^3.7.1"
-    autoprefixer: "npm:^10.4.20"
-    clsx: "npm:^2.1.1"
-    eslint: "npm:^9.11.1"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-react-hooks: "npm:^5.1.0-rc.0"
-    eslint-plugin-react-refresh: "npm:^0.4.12"
-    globals: "npm:^15.10.0"
-    husky: "npm:^9.1.6"
-    lint-staged: "npm:^15.2.10"
-    postcss: "npm:^8.4.47"
-    prettier: "npm:3.3.3"
-    prettier-plugin-tailwindcss: "npm:^0.6.8"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    stylelint: "npm:^16.9.0"
-    stylelint-config-standard: "npm:^36.0.1"
-    tailwindcss: "npm:^3.4.13"
-    typescript: "npm:^5.6.2"
-    typescript-eslint: "npm:^8.8.0"
-    vite: "npm:^5.4.8"
-  languageName: unknown
-  linkType: soft
-
 "rollup@npm:^4.20.0":
   version: 4.23.0
   resolution: "rollup@npm:4.23.0"
@@ -3811,6 +3780,37 @@ __metadata:
   checksum: 10c0/a5eca3eb50bc11552d453488344e6507156b9193efd7635e98e867fab275d527af53d8866e2370cd09dfe74378a18111622ace35af6a608e5223a7d27fe99537
   languageName: node
   linkType: hard
+
+"tessera@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "tessera@workspace:."
+  dependencies:
+    "@eslint/js": "npm:^9.11.1"
+    "@types/react": "npm:^18.3.10"
+    "@types/react-dom": "npm:^18.3.0"
+    "@vitejs/plugin-react-swc": "npm:^3.7.1"
+    autoprefixer: "npm:^10.4.20"
+    clsx: "npm:^2.1.1"
+    eslint: "npm:^9.11.1"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-react-hooks: "npm:^5.1.0-rc.0"
+    eslint-plugin-react-refresh: "npm:^0.4.12"
+    globals: "npm:^15.10.0"
+    husky: "npm:^9.1.6"
+    lint-staged: "npm:^15.2.10"
+    postcss: "npm:^8.4.47"
+    prettier: "npm:3.3.3"
+    prettier-plugin-tailwindcss: "npm:^0.6.8"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    stylelint: "npm:^16.9.0"
+    stylelint-config-standard: "npm:^36.0.1"
+    tailwindcss: "npm:^3.4.13"
+    typescript: "npm:^5.6.2"
+    typescript-eslint: "npm:^8.8.0"
+    vite: "npm:^5.4.8"
+  languageName: unknown
+  linkType: soft
 
 "text-table@npm:^0.2.0":
   version: 0.2.0

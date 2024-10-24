@@ -1,5 +1,5 @@
-import { ButtonDemo } from './particle/demos/ButtomDemo';
-import { ButtonGroupDemo } from './particle/demos/ButtonGroupDemo';
+import { ButtonDemo } from './tessera/demos/ButtomDemo';
+import { ButtonGroupDemo } from './tessera/demos/ButtonGroupDemo';
 
 export const App = () => {
   return (

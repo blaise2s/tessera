@@ -55,6 +55,7 @@ export const ButtonGroupDemo = () => {
   return (
     <div className='space-y-2 p-4'>
       <div>Button Group Demo</div>
+      {/*  Primary in this case outline */}
       <div className='flex space-x-2'>
         <ButtonGroupDemoGroup />
       </div>
@@ -69,7 +70,7 @@ export const ButtonGroupDemo = () => {
         <ButtonGroupDemoGroup size='medium' orientation='vertical' />
         <ButtonGroupDemoGroup size='large' orientation='vertical' />
       </div>
-      {/*  */}
+      {/* ghost  */}
       <div className='flex space-x-2'>
         <ButtonGroupDemoGroup variant='ghost' />
       </div>
@@ -92,7 +93,7 @@ export const ButtonGroupDemo = () => {
           variant='ghost'
         />
       </div>
-      {/*  */}
+      {/* primary */}
       <div className='flex space-x-2'>
         <ButtonGroupDemoGroup variant='primary' />
       </div>
@@ -115,7 +116,76 @@ export const ButtonGroupDemo = () => {
           variant='primary'
         />
       </div>
-      {/*  */}
+      {/* secondary */}
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup variant='secondary' />
+      </div>
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup size='medium' variant='secondary' />
+      </div>
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup size='large' variant='secondary' />
+      </div>
+      <div className='inline-flex space-x-2'>
+        <ButtonGroupDemoGroup orientation='vertical' variant='secondary' />
+        <ButtonGroupDemoGroup
+          size='medium'
+          orientation='vertical'
+          variant='secondary'
+        />
+        <ButtonGroupDemoGroup
+          size='large'
+          orientation='vertical'
+          variant='secondary'
+        />
+      </div>
+      {/* info */}
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup variant='info' />
+      </div>
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup size='medium' variant='info' />
+      </div>
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup size='large' variant='info' />
+      </div>
+      <div className='inline-flex space-x-2'>
+        <ButtonGroupDemoGroup orientation='vertical' variant='info' />
+        <ButtonGroupDemoGroup
+          size='medium'
+          orientation='vertical'
+          variant='info'
+        />
+        <ButtonGroupDemoGroup
+          size='large'
+          orientation='vertical'
+          variant='info'
+        />
+      </div>
+      {/* warning */}
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup variant='warning' />
+      </div>
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup size='medium' variant='warning' />
+      </div>
+      <div className='flex space-x-2'>
+        <ButtonGroupDemoGroup size='large' variant='warning' />
+      </div>
+      <div className='inline-flex space-x-2'>
+        <ButtonGroupDemoGroup orientation='vertical' variant='warning' />
+        <ButtonGroupDemoGroup
+          size='medium'
+          orientation='vertical'
+          variant='warning'
+        />
+        <ButtonGroupDemoGroup
+          size='large'
+          orientation='vertical'
+          variant='warning'
+        />
+      </div>
+      {/* danger */}
       <div className='flex space-x-2'>
         <ButtonGroupDemoGroup variant='danger' />
       </div>

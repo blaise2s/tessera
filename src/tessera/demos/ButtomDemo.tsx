@@ -109,8 +109,11 @@ export const ButtonDemo = () => {
     <div className='space-y-2 p-4'>
       <div>Button Demo</div>
       <ButtonDemoGroup />
+      <ButtonDemoGroup variant='secondary' />
       <ButtonDemoGroup variant='outline' />
       <ButtonDemoGroup variant='ghost' />
+      <ButtonDemoGroup variant='info' />
+      <ButtonDemoGroup variant='warning' />
       <ButtonDemoGroup variant='danger' />
     </div>
   );

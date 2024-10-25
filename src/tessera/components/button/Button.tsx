@@ -4,37 +4,53 @@ import { clsx } from 'clsx';
 
 const ButtonVariants = {
   primary: 'primary',
+  secondary: 'secondary',
   outline: 'outline',
   ghost: 'ghost',
+  info: 'info',
+  warning: 'warning',
   danger: 'danger',
 } as const;
 export type ButtonVariant =
   (typeof ButtonVariants)[keyof typeof ButtonVariants];
 
-const commonNonDangerButtonClasses =
-  'focus:outline focus:outline-primary-300 focus:outline-offset-2';
 const getButtonVariantClasses = (variant: ButtonVariant, active?: boolean) => {
   let className = '';
   switch (variant) {
     case ButtonVariants.primary:
       className = clsx(
-        'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700',
+        'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 focus:outline focus:outline-primary-300 focus:outline-offset-2',
         active && 'bg-primary-700',
-        commonNonDangerButtonClasses,
+      );
+      break;
+    case ButtonVariants.secondary:
+      className = clsx(
+        'bg-secondary-500 text-white hover:bg-secondary-600 active:bg-secondary-700 focus:outline focus:outline-secondary-300 focus:outline-offset-2',
+        active && 'bg-secondary-700',
       );
       break;
     case ButtonVariants.outline:
       className = clsx(
-        'bg-white border border-secondary-400 text-secondary-900 hover:bg-secondary-50 hover:border-secondary-700 active:bg-secondary-100 active:border-secondary-800',
-        active && 'bg-secondary-100 border-secondary-800 z-10',
-        commonNonDangerButtonClasses,
+        'bg-white border border-tertiary-400 text-tertiary-900 hover:bg-tertiary-50 hover:border-tertiary-700 active:bg-tertiary-100 active:border-tertiary-800 focus:outline focus:outline-primary-300 focus:outline-offset-2',
+        active && 'bg-tertiary-100 border-tertiary-800 z-10',
       );
       break;
     case ButtonVariants.ghost:
       className = clsx(
-        'bg-transparent text-secondary-900 hover:bg-secondary-100 active:bg-secondary-200 focus:bg-secondary-100',
-        active && 'bg-secondary-200',
-        commonNonDangerButtonClasses,
+        'bg-transparent text-tertiary-900 hover:bg-tertiary-100 active:bg-tertiary-200 focus:bg-tertiary-100 focus:outline focus:outline-primary-300 focus:outline-offset-2',
+        active && 'bg-tertiary-200',
+      );
+      break;
+    case ButtonVariants.info:
+      className = clsx(
+        'bg-info-500 text-white hover:bg-info-600 active:bg-info-700 focus:outline focus:outline-info-300 focus:outline-offset-2',
+        active && 'bg-info-700',
+      );
+      break;
+    case ButtonVariants.warning:
+      className = clsx(
+        'bg-warning-500 text-white hover:bg-warning-600 active:bg-warning-700 focus:outline focus:outline-warning-300 focus:outline-offset-2',
+        active && 'bg-warning-700',
       );
       break;
     case ButtonVariants.danger:
@@ -64,7 +80,7 @@ const getButtonSizeClasses = (size: Size) => {
 };
 
 const commonButtonClasses =
-  'font-medium rounded relative hover:z-20 focus:z-10 disabled:bg-secondary-200 disabled:text-secondary-600 disabled:border-secondary-200 disabled:z-0 disabled:cursor-not-allowed';
+  'font-medium rounded relative hover:z-20 focus:z-10 disabled:bg-tertiary-200 disabled:text-tertiary-600 disabled:border-tertiary-200 disabled:z-0 disabled:cursor-not-allowed';
 
 export interface ButtonProps
   extends DetailedHTMLProps<

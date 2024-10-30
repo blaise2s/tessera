@@ -50,7 +50,6 @@ export const ButtonGroup = ({
       ? clsx(
           'inline-flex',
           '[&>:not(:first-child)]:border-l',
-          // '[&>:not(:first-child)]:border-t [&>:not(:first-child)]:border-t-primary-700',
           horizontalFirstButtonClasses,
           horizontalMiddleButtonClasses,
           horizontalLastButtonClasses,
@@ -58,7 +57,6 @@ export const ButtonGroup = ({
       : clsx(
           'inline-flex flex-col',
           '[&>:not(:first-child)]:border-t',
-          // '[&>:not(:first-child)]:border-t [&>:not(:first-child)]:border-t-primary-700',
           verticalFirstButtonClasses,
           verticalMiddleButtonClasses,
           verticalLastButtonClasses,

@@ -1,9 +1,9 @@
-import { ButtonDemo } from './tessera/demos/ButtomDemo';
-import { ButtonGroupDemo } from './tessera/demos/ButtonGroupDemo';
+import { ButtonDemo, ButtonGroupDemo } from './demos';
 
 export const App = () => {
   return (
     <>
+      {/* TODO: Replace demos with Storybook... */}
       <ButtonDemo />
       <ButtonGroupDemo />
     </>

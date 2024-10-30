@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { ButtonProps, ButtonVariant } from './Button';
 import { cloneElement, ReactElement } from 'react';
+import { ButtonProps, ButtonVariant } from '../Button';
 import { Size } from '../properties';
 
 interface ButtonGroupProps {
